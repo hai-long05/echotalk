@@ -14,14 +14,10 @@ const Sidenav = () => {
   }
   
   return (
-    <div className='w-[7%] h-full flex flex-col justify-center'>
-      <div className='h-[90%] w-full flex flex-col bg-primary-color ml-7 items-center rounded-xl'>
-        <div className='mb-10 mt-10'>
-          placeholder
-        </div>
-        <FontAwesomeIcon icon={faHouse} size='xl' className='text-bg-color my-4'/>
-        <FontAwesomeIcon icon={faRightFromBracket} size='xl' className='text-bg-color cursor-pointer my-4' onClick={handleLogOut}/>
-      </div> 
+    <div className='w-[7%] h-full flex flex-col items-center bg-[#323946]'>
+      <img src='https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg' alt='' className='mt-10 mb-10 w-14 rounded-full' />
+      <FontAwesomeIcon icon={faHouse} size='xl' className='text-primary-color my-4'/>
+      <FontAwesomeIcon icon={faRightFromBracket} size='xl' className='text-primary-color cursor-pointer my-4' onClick={handleLogOut}/>
     </div>
   )
 }
