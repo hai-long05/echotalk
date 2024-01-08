@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path='/auth' element={<AuthenticationPage />} />
           <Route element={<ProtectedRoute />}>
-            <Route path='/home' element={<HomePage />} />
+            <Route path='/' element={<HomePage />} />
           </Route>
         </Routes>
       </Router>

@@ -28,7 +28,7 @@ const SignUp = () => {
     }
     try {
       await auth.signUp(email, password)
-      navigate('/home')
+      navigate('/')
     } catch (e) {
       console.log('Failed to sign up: ', e)
     } 

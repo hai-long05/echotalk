@@ -15,7 +15,7 @@ const SignIn = () => {
   const handleSubmit = async() => {
     try {
       await auth?.logIn(emailRef.current!.value, passwordRef.current!.value)
-      navigate('/home')
+      navigate('/')
     } catch (e) {
       console.log('Failed to log in: ', e)
     }
