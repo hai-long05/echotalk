@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useRef } from 'react'
 import { useAuth } from '../context/AuthContext'
 import { Navigate, useNavigate } from 'react-router-dom'
+import { doc, setDoc } from 'firebase/firestore'
+import { db } from '../firebase'
 
 const SignUp = () => {
 
@@ -19,6 +21,7 @@ const SignUp = () => {
     const email = emailRef.current!.value;
     const password = passwordRef.current!.value;
     const confirmPassword = confirmPasswordRef.current!.value;
+
     if (!name || !email || !password || !confirmPassword) return 
     if (password !== confirmPassword) return 
 
@@ -27,6 +30,11 @@ const SignUp = () => {
       return 
     }
     try {
+      const userRef = doc(db, 'users', auth.currentUser?.uid!)
+      await setDoc(userRef, {
+        name: name
+      })
+
       await auth.signUp(email, password)
       navigate('/')
     } catch (e) {
